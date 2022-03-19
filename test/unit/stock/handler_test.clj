@@ -1,7 +1,7 @@
 (ns stock.handler-test
   (:require [midje.sweet :refer :all]
             [ring.mock.request :as mock]
-            [stock-api.handler :refer :all]))
+            [stock.handler :refer :all]))
 
 (facts "Display 'Hello World'"
        (let [response (app (mock/request :get "/"))]
