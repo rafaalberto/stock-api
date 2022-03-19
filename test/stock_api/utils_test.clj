@@ -2,7 +2,7 @@
   (:require [midje.sweet :refer :all]
             [stock-api.utils :refer [json-content]]))
 
-(facts "Convert content to JSON"
+(facts "Convert content to JSON with status 200"
        (let [response (json-content {:message "Hello World"})]
          (fact "Status should be 200"
                (:status response) => 200)
@@ -11,7 +11,7 @@
          (fact "Content should be 'Hello World'"
                (:body response) => "{\"message\":\"Hello World\"}")))
 
-(facts "Convert content to JSON with status 201"
+(facts "Convert content to JSON with status different to 200"
        (let [response (json-content {:message "Hello Clojure!"} 201)]
          (fact "Status should be 201"
                (:status response) => 201)
