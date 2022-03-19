@@ -1,4 +1,4 @@
-(ns stock-api.handler-test
+(ns stock.handler-test
   (:require [midje.sweet :refer :all]
             [ring.mock.request :as mock]
             [stock-api.handler :refer :all]))

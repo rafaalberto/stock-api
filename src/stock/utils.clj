@@ -1,4 +1,4 @@
-(ns stock-api.utils
+(ns stock.utils
   (:require [cheshire.core :as json]))
 
 (defn json-content [content & [status]]

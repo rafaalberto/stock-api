@@ -1,6 +1,6 @@
-(ns stock-api.utils-test
+(ns stock.utils-test
   (:require [midje.sweet :refer :all]
-            [stock-api.utils :refer [json-content]]))
+            [stock.utils :refer [json-content]]))
 
 (facts "Convert content to JSON with status 200"
        (let [response (json-content {:message "Hello World"})]
