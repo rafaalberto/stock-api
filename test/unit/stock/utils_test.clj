@@ -3,13 +3,13 @@
             [stock.utils :refer [json-content]]))
 
 (facts "Convert content to JSON with status 200"
-       (let [response (json-content {:message "Hello World"})]
+       (let [response (json-content {:message "Hello Clojure!"})]
          (fact "Status should be 200"
                (:status response) => 200)
          (fact "Headers should be 'application/json; charset=utf-8'"
                (:headers response) => {"Content-Type" "application/json; charset=utf-8"})
-         (fact "Content should be 'Hello World'"
-               (:body response) => "{\"message\":\"Hello World\"}")))
+         (fact "Content should be 'Hello Clojure!'"
+               (:body response) => "{\"message\":\"Hello Clojure!\"}")))
 
 (facts "Convert content to JSON with status different to 200"
        (let [response (json-content {:message "Hello Clojure!"} 201)]
@@ -19,5 +19,3 @@
                (:headers response) => {"Content-Type" "application/json; charset=utf-8"})
          (fact "Content should be 'Hello Clojure!'"
                (:body response) => "{\"message\":\"Hello Clojure!\"}")))
-
-

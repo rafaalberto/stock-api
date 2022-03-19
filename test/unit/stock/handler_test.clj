@@ -5,8 +5,8 @@
 
 (facts "Display 'Hello World'"
        (let [response (app (mock/request :get "/"))]
-         (fact "Response body is 'Hello World'"
-               (:body response) => "{\"message\":\"Hello World\"}")))
+         (fact "Response body is 'Hello Clojure!'"
+               (:body response) => "{\"message\":\"Hello Clojure!\"}")))
 
 (facts "Invalid route does not exists"
        (let [response (app (mock/request :get "/invalid"))]

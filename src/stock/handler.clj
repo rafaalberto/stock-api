@@ -6,7 +6,7 @@
             [stock.utils :refer [json-content]]))
 
 (defroutes app-routes
-           (GET "/" [] (json-content {:message "Hello World"}))
+           (GET "/" [] (json-content {:message "Hello Clojure!"}))
            (route/not-found "Not Found"))
 
 (def app
