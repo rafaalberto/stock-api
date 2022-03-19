@@ -3,12 +3,7 @@
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
             [ring.middleware.json :refer [wrap-json-body]]
-            [cheshire.core :as json]))
-
-(defn parse-json [content & [status]]
-  {:status  (or status 200)
-   :headers {"Content-Type" "application/json; charset=utf-8"}
-   :body    (json/generate-string content)})
+            [stock-api.utils :refer [parse-json]]))
 
 (defroutes app-routes
            (GET "/" [] (parse-json {:message "Hello World"}))
