@@ -3,10 +3,10 @@
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
             [ring.middleware.json :refer [wrap-json-body]]
-            [stock-api.utils :refer [parse-json]]))
+            [stock-api.utils :refer [json-content]]))
 
 (defroutes app-routes
-           (GET "/" [] (parse-json {:message "Hello World"}))
+           (GET "/" [] (json-content {:message "Hello World"}))
            (route/not-found "Not Found"))
 
 (def app
